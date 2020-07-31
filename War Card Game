@@ -1,0 +1,35 @@
+# importing required random module
+import random
+while True:
+  print("Now please enter your choice no. \n")
+  # take the input from user
+  ch = int(input("Now Your turn: "))
+  while ch> 13 or ch< 1:
+     ch = int(input("Enter your valid input here: "))
+  # print user given choice
+  print("Your choice is: " ,ch)
+  print("\n Now its computer turn to initiate....")
+  # Computer will select randomly any number
+  # among values 1, 2 and 3.....upto 13. Using randint method
+  # of random module
+  comp_choice = random.randint(1, 13)
+  # looping will continue until comp_choice value
+  # is equal to the choice value
+  while comp_choice == ch:
+    comp_choice = random.randint(1,13)
+    # initialize value of the variable comp_choice_name
+    # variable corresponding to the choice value
+  print("computer choice is: " ,comp_choice)
+  print(ch , " V/s " , comp_choice)
+  # condition for winning the game
+  if(ch>comp_choice):
+      print("You are the winner-> ",end = " ")
+  else:
+    print("Computer wins ->",end = " ")
+  print("Do you want to play again? (Y/N)")
+  ans = input()
+      # if user input n or N then condition is True
+  if ans == 'n' or ans == 'N':
+     break
+   # after exiting from the while loop
+  print("\nThanks for sharing time with us...")

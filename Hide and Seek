@@ -1,0 +1,40 @@
+# importing required random module
+import random
+while True:
+  print("Now please enter your choice no. \n 1. LeftHand  \n 2. RightHand \n")
+  # take the input from user
+  ch = int(input("Now Your turn: "))
+  while ch> 2 or ch< 1:
+     ch = int(input("Enter your valid input here: "))
+  if ch == 1:
+     choice_name = 'LeftHand'
+  else :
+     choice_name = 'RightHand'
+  # print user given choice
+  print("Your choice is: " + choice_name)
+  print("\nNow its computer turn to initiate....")
+  # Computer will select randomly any number
+  # among values 1 and 2. Using randint method
+  # of random module
+  comp_choice = random.randint(1, 2)
+  # looping will continue until comp_choice value
+  # is equal to the choice value
+    # initialize value of the variable comp_choice_name
+    # variable corresponding to the choice value
+  if comp_choice == 1:
+     comp_choice_name = 'LeftHand'
+  else :
+     comp_choice_name = 'RightHand'
+  print("computer choice is: " + comp_choice_name)
+  # condition for winning the game
+  if(ch==comp_choice):
+      print("\nYou are the winner-> ",end = " ")
+  else:
+      print("\nComputer wins ->\n",end = " ")
+  print("Do you want to play again? (Y/N)")
+  ans = input()
+      # if user input n or N then condition is True
+  if ans == 'n' or ans == 'N':
+     break
+   # after exiting from the while loop
+  print("\nThanks for sharing time with us...")
